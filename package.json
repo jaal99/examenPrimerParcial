@@ -1,0 +1,26 @@
+{
+  "name": "examen1jassiel",
+  "version": "1.0.0",
+  "description": "examen primer parcial de seminario de software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaal99/examenPrimerParcial.git"
+  },
+  "keywords": [
+    "examenJassiel",
+    "node",
+    "express",
+    "handlebars"
+  ],
+  "author": "Jassiel Aldana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaal99/examenPrimerParcial/issues"
+  },
+  "homepage": "https://github.com/jaal99/examenPrimerParcial#readme"
+}
