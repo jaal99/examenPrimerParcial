@@ -4,6 +4,12 @@ const express = require("express");
 // Importar handlebars como template engine
 const exphbs = require("express-handlebars");
 
+// Importar body parser que nos permite acceder al cuerpo de la petición HTTP
+const bodyParser = require("body-parser");
+
+// Importar la función de cálculo de método francés
+const { calculo } = require("./calculo");
+
 // Crear un servidor express
 const app = express();
 
@@ -19,11 +25,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Información sobre los verbos HTTP
 // https://developer.mozilla.org/es/docs/Web/HTTP/Methods
 app.get("/", (req, res, next) => {
-    res.send("Bienvenido al examen");
+    // Para mandar texto
+    //res.send("Bienvenido al examen");
+    // Para mandar datos
+    res.render("formulario");
   });
 
-/*app.get("/Ejercicio01", (req, res, next) => {
-    res.render("Ejercicio01");
+  app.post("/prestamo", (req, res, next) => {
+    // Asignación por destructuring
+    // https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment
+    const { monto, tasaInteres, periodo } = req.body;
+  
+    const depositos = calculo(monto, tasaInteres, periodo);
+  
+    res.render("resultado", { depositos });
+  });
+
+  // Para mostrat en cmd
+/*app.post("/prestamo", (req, res, next) => {
+  // Asignación por destructuring
+  // https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Destructuring_assignment
+  const { variable } = req.body;
+
+   calculo(variable);
+
+  res.send("Peticion aceptada");
 });*/
 
 // Inicializar el servidor en un puerto en específico

@@ -1,0 +1,25 @@
+<h1 class="mt-3">Calculo de Interés Compuesto</h1>
+
+{{#if depositos}}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Periodo</th>
+      <th scope="col">Depositos</th>
+      <th scope="col">Interés</th>
+      <th scope="col">Saldo Final</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each depositos}}
+    <tr>
+    <th scope="row">{{mes}}</th>
+    <th scope="row">{{deposito}}</th>
+      <th scope="row">{{interes}}</th>
+      <th scope="row">{{capital}}</th>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{/if}}
